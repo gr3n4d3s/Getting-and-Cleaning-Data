@@ -1,12 +1,10 @@
-# The README that explains the analysis files is clear and understandable.
-# You should also include a README.md in the repo with your scripts. 
-# This repo explains how all of the scripts work and how they are connected.
+The README explains the analysis files, clear and understandable.
 
 Packages Used:
 library(dplyr)
 library(data.table)
 
-Script Functions:
+# Script Functions:
 The script included goes through a series simple steps to clean and describe the test data to finish 
 with a tidy data set thats easy to read and understand.
 
@@ -28,6 +26,7 @@ with a tidy data set thats easy to read and understand.
 
 4.labels_test/train and person_test/train columns are added to data_test/_train columns using cbind
 	cbind()
+
 5. test and training data is combine using rbind
 	rbind()
 
@@ -47,25 +46,24 @@ with a tidy data set thats easy to read and understand.
 10. Create a "tidy" data frame thats grouped_by person_code and summarized by mean.
 	group_by()
 	summarise_all()
-	### NOTE: could only get this to using pipeline and alot of frustration...
+	NOTE: could only get this to using pipeline and alot of frustration...
 	(pipeline) = %>%
 
 11. Last minute add a write.table to write a text file of the "tidy" data to the working directory.
 	write.table()
 
-##### Origional Readme with licenses and "Cudos" below ####
+## Origional Readme with licenses and "Cudos" below 
 
-==================================================================
+
 Human Activity Recognition Using Smartphones Dataset
 Version 1.0
-==================================================================
+
 Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
 Smartlab - Non Linear Complex Systems Laboratory
 DITEN - Università degli Studi di Genova.
 Via Opera Pia 11A, I-16145, Genoa, Italy.
 activityrecognition@smartlab.ws
 www.smartlab.ws
-==================================================================
 
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. 
 Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) 
