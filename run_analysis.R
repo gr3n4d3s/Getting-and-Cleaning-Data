@@ -74,6 +74,9 @@ names(act_label_df)<-gsub("fBodyBodyAcc", "Fast Fourier Transform Body Accelerat
 names(act_label_df)<-gsub("fBodyBodyGyro", "Fast Fourier Transform Body Gyroscopic Angle",names(act_label_df))
 
 #tidy things up with group_by and summarise
+#seemingly can only get this to work using the pipline operator %>%
 tidy_df<- act_label_df %>% group_by(person_code, activity) %>% summarise_all(mean)
 
-write.table(tidy_df, file = "tidy_df.txt")
+#write a table in the working derectory of the tidy data table
+#not sure where i saw to do this
+write.table(tidy_df, file = "tidy_df.txt", row.names = FALSE)
