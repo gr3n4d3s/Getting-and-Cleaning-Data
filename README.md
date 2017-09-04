@@ -1,56 +1,56 @@
 The README explains the analysis files, clear and understandable.
 
-Packages Used:
-library(dplyr)
-library(data.table)
+# Packages Used:
+- library(dplyr)
+- library(data.table)
 
 # Script Functions:
 The script included goes through a series simple steps to clean and describe the test data to finish 
 with a tidy data set thats easy to read and understand.
 
 1. Each data set of interest is read into read.table
-	features
-	activity_labels
-	person_test	
-	data_test	
-	labels_test	
-	person_train
-	data_train
-	labels_train
+	- features
+	- activity_labels
+	- person_test	
+	- data_test	
+	- labels_test	
+	- person_train
+	- data_train
+	- labels_train
 
 2. features names are taken from features table and attached to the names of data_test/_train
-	names()
+	- names()
 
 3. person_test/_train are givin column names "person_code" and activity_labels are givin column names "activity_code"
-	names()
+	- names()
 
-4.labels_test/train and person_test/train columns are added to data_test/_train columns using cbind
-	cbind()
+4. labels_test/train and person_test/train columns are added to data_test/_train columns using cbind
+	- cbind()
 
 5. test and training data is combine using rbind
-	rbind()
+	- rbind()
 
 6. forced unique names using make.names ### NOTE: must be used for select() to work
-	make.names()
+	- make.names()
 
 7. Use select() and matches() to find any mean and std measurments as per assignment request
-	select()
-	matches()
+	- select()
+	- matches()
 8. arrange() data by activity_code and attach activity_labels proper names in corosponding activity code
-	arrange()
-	mutate()
+	- arrange()
+	- mutate()
 9. Substatute less descriptive column descriptions with more reader friendly ones
-	names()
-	gsub() 
+	- names()
+	- gsub() 
 
 10. Create a "tidy" data frame thats grouped_by person_code and summarized by mean.
-	group_by()
-	summarise_all()
-	NOTE: could only get this to using pipeline and alot of frustration...
-	(pipeline) = %>%
+	- group_by()
+	- summarise_all()
+	- NOTE: could only get this to using pipeline and alot of frustration...
+	- (pipeline) = %>%
 
 11. Last minute add a write.table to write a text file of the "tidy" data to the working directory.
-	write.table()
+	- write.table()
 
 ## Origional Readme with licenses and "Cudos" below 
 
